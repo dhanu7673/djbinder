@@ -1,3 +1,6 @@
+
 #!/data/data/com.termux/files/usr/bin/bash
+clear
+echo -e "\033[32m$(figlet -f ASCII-Shadow 'Continue')\033[0m" | lolcat -t
 figlet continue
 msfconsole -r d.rc
